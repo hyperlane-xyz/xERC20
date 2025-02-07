@@ -23,6 +23,7 @@ struct BridgeDetails {
 struct ChainDetails {
   BridgeDetails[] bridgeDetails; // The array of bridges to configure for this chain
   address erc20; // The address of the ERC20 canonical token of that chain (address(0) if none)
+  address factory; // The address of the xERC20 Factory
   address governor; // The governor address of the xERC20
   bool isNativeGasToken; // Whether or not the token is the native gas token of the chain. E.g. Are you deploying an xERC20 for MATIC in Polygon?
   string rpcEnvName; // The name of the RPC to use from the .env file
@@ -34,11 +35,11 @@ struct DeploymentConfig {
   string symbol; // The symbol to use for the xERC20
 }
 
+import {console} from "forge-std/console.sol";
 contract XERC20Deploy is Script, ScriptingLibrary {
   using stdJson for string;
 
   uint256 public deployer = vm.envUint('DEPLOYER_PRIVATE_KEY');
-  XERC20Factory public factory = XERC20Factory(0xA6D506140062eca85B39A8FF66c4F596A4297cac);
 
   function run() public {
     string memory _json = vm.readFile('./solidity/scripts/xerc20-deployment-config.json');
@@ -48,7 +49,8 @@ contract XERC20Deploy is Script, ScriptingLibrary {
 
     for (uint256 i; i < _chainAmount; i++) {
       ChainDetails memory _chainDetails = _data.chainDetails[i];
-
+      XERC20Factory factory = XERC20Factory(_chainDetails.factory);
+      
       vm.createSelectFork(vm.rpcUrl(vm.envString(_chainDetails.rpcEnvName)));
       vm.startBroadcast(deployer);
       // If this chain does not have a factory we will revert
