@@ -1,6 +1,6 @@
 {
-    "name": "Tether Gold",
-    "symbol": "XAUt",
+    "name": "OpenXAUT",
+    "symbol": "oXAUT",
     "chainDetails": [
         {
             "rpcEnvName": "ETHEREUM_MAINNET_RPC",
