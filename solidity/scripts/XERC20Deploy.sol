@@ -41,7 +41,7 @@ contract XERC20Deploy is Script, ScriptingLibrary {
   XERC20Factory public factory = XERC20Factory(0x1AB0B0438F04Dd396610DB7A6bc9B67d1e146E46);
 
   function run() public {
-    string memory _json = vm.readFile('./solidity/scripts/oxut-deployment-config.json');
+    string memory _json = vm.readFile('./solidity/scripts/configs/oxaut/oxaut-extension-ava-config.json');
     DeploymentConfig memory _data = abi.decode(_json.parseRaw('.'), (DeploymentConfig));
     uint256 _chainAmount = _data.chainDetails.length;
     address[] memory _tokens = new address[](_chainAmount);
