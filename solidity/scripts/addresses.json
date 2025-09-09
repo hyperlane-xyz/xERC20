@@ -1,0 +1,23 @@
+{
+    "ethereum": {
+        "factory": "0x1AB0B0438F04Dd396610DB7A6bc9B67d1e146E46",
+        "lockbox": "0x0797c6f55f5c9005996A55959A341018cF69A963",
+        "xerc20": "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    },
+    "celo": {
+        "factory": "0x1AB0B0438F04Dd396610DB7A6bc9B67d1e146E46",
+        "xerc20": "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    },
+    "worldchain": {
+        "factory": "0x1AB0B0438F04Dd396610DB7A6bc9B67d1e146E46",
+        "xerc20": "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    },
+    "avalanche": {
+        "factory": "0x1AB0B0438F04Dd396610DB7A6bc9B67d1e146E46",
+        "xerc20": "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    },
+    "base": {
+        "factory": "0x1AB0B0438F04Dd396610DB7A6bc9B67d1e146E46",
+        "xerc20": "0x30974f73A4ac9E606Ed80da928e454977ac486D2"
+    }
+}
