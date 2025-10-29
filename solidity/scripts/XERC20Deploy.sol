@@ -35,14 +35,13 @@ struct DeploymentConfig {
   string symbol; // The symbol to use for the xERC20
 }
 
-import {console} from "forge-std/console.sol";
 contract XERC20Deploy is Script, ScriptingLibrary {
   using stdJson for string;
 
   uint256 public deployer = vm.envUint('DEPLOYER_PRIVATE_KEY');
 
   function run() public {
-    string memory _json = vm.readFile('./solidity/scripts/xerc20-deployment-config.json');
+    string memory _json = vm.readFile('./solidity/scripts/configs/EZETH/xerc20-deployment-ink-monad-xlayer.json');
     DeploymentConfig memory _data = abi.decode(_json.parseRaw('.'), (DeploymentConfig));
     uint256 _chainAmount = _data.chainDetails.length;
     address[] memory _tokens = new address[](_chainAmount);
@@ -50,7 +49,7 @@ contract XERC20Deploy is Script, ScriptingLibrary {
     for (uint256 i; i < _chainAmount; i++) {
       ChainDetails memory _chainDetails = _data.chainDetails[i];
       XERC20Factory factory = XERC20Factory(_chainDetails.factory);
-      
+
       vm.createSelectFork(vm.rpcUrl(vm.envString(_chainDetails.rpcEnvName)));
       vm.startBroadcast(deployer);
       // If this chain does not have a factory we will revert

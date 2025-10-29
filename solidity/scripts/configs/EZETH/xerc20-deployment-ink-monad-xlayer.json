@@ -1,0 +1,30 @@
+{
+    "name": "Renzo Restaked ETH Stage 9",
+    "symbol": "EZETHSTAGE",
+    "chainDetails": [
+        {
+            "rpcEnvName": "INK_MAINNET_RPC",
+            "erc20": "0x0000000000000000000000000000000000000000",
+            "governor": "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba",
+            "factory": "0xbED5C19d77e001fDe9356E64e13CB56FbE46C29c",
+            "isNativeGasToken": false,
+            "bridgeDetails": []
+        },
+        {
+            "rpcEnvName": "MONAD_MAINNET_RPC",
+            "erc20": "0x0000000000000000000000000000000000000000",
+            "governor": "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba",
+            "factory": "0xbED5C19d77e001fDe9356E64e13CB56FbE46C29c",
+            "isNativeGasToken": false,
+            "bridgeDetails": []
+        },
+        {
+            "rpcEnvName": "XLAYER_MAINNET_RPC",
+            "erc20": "0x0000000000000000000000000000000000000000",
+            "governor": "0xa7ECcdb9Be08178f896c26b7BbD8C3D4E844d9Ba",
+            "factory": "0xbED5C19d77e001fDe9356E64e13CB56FbE46C29c",
+            "isNativeGasToken": false,
+            "bridgeDetails": []
+        }
+    ]
+}
