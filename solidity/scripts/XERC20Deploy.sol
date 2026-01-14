@@ -41,7 +41,7 @@ contract XERC20Deploy is Script, ScriptingLibrary {
   uint256 public deployer = vm.envUint('DEPLOYER_PRIVATE_KEY');
 
   function run() public {
-    string memory _json = vm.readFile('./solidity/scripts/configs/EZETH/xerc20-deployment-stable.json');
+    string memory _json = vm.readFile('./solidity/scripts/configs/EZETH/xerc20-deployment-megaeth.json');
     DeploymentConfig memory _data = abi.decode(_json.parseRaw('.'), (DeploymentConfig));
     uint256 _chainAmount = _data.chainDetails.length;
     address[] memory _tokens = new address[](_chainAmount);

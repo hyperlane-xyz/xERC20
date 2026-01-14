@@ -1,0 +1,14 @@
+{
+    "name": "Renzo Restaked ETH Stage 9",
+    "symbol": "EZETHSTAGE",
+    "chainDetails": [
+        {
+            "rpcEnvName": "MEGAETH_MAINNET_RPC",
+            "erc20": "0x0000000000000000000000000000000000000000",
+            "governor": "0xe1B9bfcdE787783C96e8F65c57a5CEc7189d7615",
+            "factory": "0x57a36E3a24AF7E21fe37bbAd38390702C1dB7450",
+            "isNativeGasToken": false,
+            "bridgeDetails": []
+        }
+    ]
+}
